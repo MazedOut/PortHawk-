@@ -9,6 +9,34 @@ Export results to .txt, .json, or .csv
 Colorized CLI output via colorama
 Lightweight and dependency-minimal (only colorama required)
 
+#Setup (one-time):
+
+Windows / macOS / Linux — simple
+Put porthawk.py in a folder (e.g., PortHawk/).
+
+-Open a terminal / Command Prompt:
+
+-Windows: press Win → type cmd → hit Enter
+-macOS: open Terminal (Spotlight → Terminal)
+-Linux: open your terminal application
+(Optional but recommended) Create and activate a virtual environment:
+
+-macOS / Linux:
+python3 -m venv .venv
+source .venv/bin/activate
+
+-Windows (PowerShell):
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+
+-Windows (Command Prompt):
+python -m venv .venv
+.\.venv\Scripts\activate
+
+-Install the small dependency (colorama):
+pip install colorama
+You’re ready — stay in the folder with porthawk.py.
+
 #Quick Start
 
 Clone repo:
