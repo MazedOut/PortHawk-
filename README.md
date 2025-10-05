@@ -41,7 +41,7 @@ You’re ready — stay in the folder with porthawk.py.
 
 Clone repo:
 
-git clone https://github.com/<your-username>/PortHawk.git
+git clone https://github.com/MazedOut/PortHawk.git
 cd PortHawk
 
 #Run a simple scan:
