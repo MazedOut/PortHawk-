@@ -10,7 +10,7 @@ import sys  # Added for help menu fix
 # Initialize colorama
 init(autoreset=True)
 
-# -------------------- Functions -------------------- #
+# Functions 
 
 def get_local_ip():
     """Get local IP for default host discovery"""
@@ -107,7 +107,7 @@ def export_results(ip, results, filename, filetype="txt"):
                 writer.writerow([ip, port, banner])
     print(f"{Fore.CYAN}[+] Results saved to {filename}")
 
-# -------------------- CLI Parsing -------------------- #
+#  CLI Parsing 
 
 parser = argparse.ArgumentParser(
     description="PortHawk: Efficient Python CLI Port Scanner",
@@ -123,9 +123,9 @@ parser.add_argument("--output", help="Save results to file (txt/json/csv)")
 
 args = parser.parse_args()
 
-# -------------------- Main Logic -------------------- #
+#  Main Logic 
 
-# Help menu shows if no arguments are provided
+# Help menu shows if no arguments
 if len(sys.argv) == 1:
     parser.print_help()
     exit(0)
@@ -139,3 +139,4 @@ if args.host:
     open_ports = scan_ports(args.host, start_port, end_port, max_threads=args.threads)
     if args.output:
         export_results(args.host, open_ports, args.output, filetype=args.output.split('.')[-1])
+
