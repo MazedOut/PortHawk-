@@ -40,7 +40,7 @@ Optionally add a requirements.txt:
 
 colorama>=0.4.6
 
-Usage & Examples
+#Usage & Examples
 Syntax
 python porthawk.py [--host IP] [--subnet CIDR --discover] [--ports START-END] [--threads N] [--output filename]
 
@@ -66,9 +66,10 @@ python porthawk.py --subnet 192.168.1.0/24 --discover
 python porthawk.py --host 192.168.1.10 --ports 1-65535 --threads 400
 
 
-Note: Increasing threads speeds scanning but raises CPU/network load and may trigger IDS/IPS.
+#Note: Increasing threads speeds scanning but raises CPU/network load and may trigger IDS/IPS.
 
-Arguments / Flags
+#Arguments / Flags :
+
 
 --host
 Target host IP to scan (e.g. 192.168.1.10).
@@ -88,7 +89,7 @@ Number of concurrent worker threads for scanning / discovery.
 --output
 Save results to a file. Extension determines format: .txt, .json, .csv.
 
-Output Formats
+#Output Formats:
 TXT
 Scan results for 192.168.1.10
 Port 22 → SSH Service
@@ -108,7 +109,7 @@ Host,Port,Banner
 192.168.1.10,22,SSH-2.0-OpenSSH_7.6
 192.168.1.10,80,Apache/2.4.29 (Ubuntu)
 
-Code Walkthrough:
+#Code Walkthrough:
 
 get_local_ip() — tries to find a local IP by connecting to 8.8.8.8. Fallback 127.0.0.1.
 
@@ -122,26 +123,8 @@ scan_ports(ip, start_port, end_port, max_threads) — concurrent scanning of ran
 
 export_results(ip, results, filename, filetype) — writes txt, json, or csv.
 
-Sample Output Files
 
-examples/sample_output.json
-
-{
-  "host": "192.168.1.10",
-  "results": [
-    {"port": 22, "banner": "SSH-2.0-OpenSSH_7.6"},
-    {"port": 80, "banner": "Apache/2.4.29 (Ubuntu)"}
-  ]
-}
-
-
-examples/sample_output.csv
-
-Host,Port,Banner
-192.168.1.10,22,SSH-2.0-OpenSSH_7.6
-192.168.1.10,80,Apache/2.4.29 (Ubuntu)
-
-Troubleshooting & FAQ
+#Troubleshooting & FAQ
 
 Q: Script fails with ValueError: not enough values to unpack (expected 2, got 1)
 A: This happens when --ports value is not in start-end format. Use --ports 1-1024.
