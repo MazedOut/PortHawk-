@@ -1,4 +1,4 @@
-# PortHawk-
+# PortHawk
 
 PortHawk is a fast, multi-threaded Python CLI port scanner with host discovery and basic banner grabbing.
 Designed for small LAN scanning, learning socket programming, and quick reconnaissance in authorized environments.
